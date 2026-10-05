@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;600&display=swap');
+
+body {
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #474545, #222831);
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+h1 {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  font-family: 'Press Start 2P', cursive;
+  color: #721ce2;
+  text-shadow: 2px 2px #2c1e1e;
+  text-align: center;
+}
+  
+/* === GAME SETUP === */
+#game-id-input {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#game-id-input input {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #393e46;
+  color: #eee;
+}
+
+#game-id-input button {
+  padding: 0.6rem 1.2rem;
+  background: #00adb5;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#game-id-input button:hover {
+  background: #00f2fe;
+}
+
+/* === MONSTER SELECTION === */
+#monster-selector {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: #eee;
+}
+
+#monster-type {
+  font-size: 1.2rem;
+  padding: 0.3rem;
+  background: #393e46;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+/* === STATS === */
+#stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #f1f1f1;
+  background: #222831;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+/* === GAME BOARD === */
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+  gap: 4px;
+  margin-bottom: 2rem;
+  border: 3px solid #00adb5;
+  border-radius: 10px;
+  padding: 10px;
+  background: #0f0f0f;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background: #393e46;
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  background-color: #4ecca3;
+}
+
+.cell.selected {
+  border: 2px solid #ff4d6d;
+  background-color: #6b6e70;
+}
+
+.cell.player1 {
+  background-color: #0077b6;
+}
+
+.cell.player2 {
+  background-color: #d62828;
+}
+
+/* === BUTTONS === */
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #00adb5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00f2fe;
+  color: #000;
+}
+
+/* === PLAYER TURN INDICATOR === */
+#current-player {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #eeeeee;
+}
+
+/* === WIN/LOSS NOTIFICATION === */
+#winner-message {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e63946;
+  margin-top: 1rem;
+}
+
+#winner-message {
+  display: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00f2fe;
+  margin-top: 1rem;
+  text-align: center;
+  text-shadow: 1px 1px #000;
+}
+
+#restart-btn {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #00adb5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+#restart-btn:hover {
+  background-color: #00f2fe;
+  color: black;
+}

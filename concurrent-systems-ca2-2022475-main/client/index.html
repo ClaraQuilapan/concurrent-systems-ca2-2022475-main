@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Mayhem</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Monster Mayhem</h1>
+
+  <!-- Game ID input -->
+  <div id="game-id-input">
+    <label for="game-id">Enter Game ID:</label>
+    <input type="text" id="game-id" placeholder="e.g. game123">
+    <button id="join-game">Join Game</button>
+  </div>
+
+  <div id="turn-indicator"><strong>Current turn:</strong> <span id="current-player">Player 1</span>
+  </div>
+  
+  <button id="end-turn-btn">End Turn</button>
+  <div id="monster-selector">
+    <label for="monster-type">Choose your monster:</label>
+    <select id="monster-type">
+      <option value="👻">Ghost</option>
+      <option value="🧛">Vampire</option>
+      <option value="🐺">Werewolf</option>
+    </select>
+  </div>
+  <div id="stats">
+    <strong>Player 1 Eliminations:</strong> <span id="player1-kills">0</span><br>
+    <strong>Player 2 Eliminations:</strong> <span id="player2-kills">0</span><br><br>
+    
+    <strong>Games Played:</strong> <span id="games-played">0</span><br>
+    <strong>Your Wins:</strong> <span id="wins">0</span><br>
+    <strong>Your Losses:</strong> <span id="losses">0</span>
+  </div>
+
+  <div id="game-board"></div>
+
+  <div id="winner-message"></div>
+  <button id="restart-btn">Start New Game</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>   
+</body>
+</html>
